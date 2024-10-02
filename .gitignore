@@ -1,0 +1,5 @@
+settings
+venv
+.env
+manage.py
+core

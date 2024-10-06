@@ -1,13 +1,9 @@
 from django.shortcuts import render
+from settings.models import Employee
 
-# Create your views here.
-# def settings(request):
-#     context = {
-#         'title': "Главное",
-#         "description": "Байбол негр",
-#         "bobo": "SILDEREI"
-#     }
-    # return render(request, 'index.html', context=context)
+def nok(request):       
+    employee = Employee.objects.latest("id")
+    return render(request, "index.html", locals())
 
 def gokgok(request):
     tixt = {

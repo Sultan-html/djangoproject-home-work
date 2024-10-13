@@ -642,40 +642,23 @@
 					</div>
 				</div>		
 			</div>		
-
-
 			<div id="blog">	
 				<div class="just_pattern"></div>
 				<div class="parallax1"></div>
 				<div class="container z-index">	
-					<div class="one-third column">
-						<div class="blog-post">
-							<img  src="{% static 'images/blog/1.jpg' %}" alt="" />
-							<h5>блог пост</h5>
-							<p>Когда горы родят своих партнеров, перья и великий толчок, родится нелепая мышь.</p>
-							<p><span>26.2.2014.</span><span> 3 коменнты</span></p>
-						</div>
-					</div>	
-					<div class="one-third column">
-						<div class="blog-post">
-							<img  src="{% static 'images/blog/2.jpg' %}" alt="" />
-							<h5>блог пост</h5>
-							<p>Когда горы родят своих партнеров, перья и великий толчок, родится нелепая мышь.</p>
-							<p><span>17.2.2014.</span><span> 7 коменнты</span></p>
-						</div>
-					</div>	
-					<div class="one-third column">
-						<div class="blog-post">
-							<img  src="{% static 'images/blog/3.jpg' %}" alt="" />
-							<h5>блог пост</h5>
-							<p>Когда горы родят своих партнеров, перья и великий толчок, родится нелепая мышь.</p>
-							<p><span>12.2.2014.</span><span> 4 коменнты</span></p>
-						</div>
-					</div>
+					{% for blog in blogs %}
+						<div class="one-third column">
+							<div class="blog-post">
+								<img src="{{ blog.image.url }}" alt="" />
+								<h5>{{ blog.title }}</h5>
+								<p>{{ blog.description }}</p>
+								<p><span>{{ blog.date }}</span><span> {{ blog.comments }} комментария</span></p>
+							</div>
+						</div>	
+					{% endfor %}
 				</div>		
-			</div>			
-			
-			
+			</div>
+				
 			
 			
 			

@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from apps.settings.models import Basesettings
+from apps.settings.models import BaseSettings,Blog
 # Create your views here.
 
 def settings(request):
-    setting = Basesettings.objects.latest('id')
+    setting = BaseSettings.objects.latest('id')
+    blogs = Blog.objects.all()
     return render(request, 'index.html', locals())
